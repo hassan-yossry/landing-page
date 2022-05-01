@@ -2,12 +2,32 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+- [Instructions](#instructions)
+
+- [Author](#Author)
+
+- [Technology](#Technology)
+
+- [Dependencies](#Dependencies)
+
+- [Credits](#Credits)
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+just add open the index html file in the website and click on the sections on the navbar you can also scroll to see the activated sections
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Author
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+Ghada Yossry Ibrahim ELbohy
+
+## Technology
+
+DOM elements manipulation
+
+## Dependencies
+
+No dependeies exists
+
+## Credits
+
+The explanaition for the getBoundingClientRect is credited to an explaination on javascript.info also scrollIntoView was from an answer at stackoverflow answer.
