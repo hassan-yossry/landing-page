@@ -35,7 +35,6 @@
  *
  */
 
-// build the nav
 /*
  *@description builds the navigation bar
  *@params {string} nabar_id the id of the navigation bar
@@ -51,7 +50,7 @@ function build_navbar(navbar_id) {
     const sectionId = section.getAttribute("id");
     navbar_list.insertAdjacentHTML(
       "beforeend",
-      `<li><a href="#" data-id="${sectionId}" class="menu__link">${sectionText}</a></li>`
+      `<li><a href="#" data-id="${sectionId}" class="menu__link your-active-class">${sectionText}</a></li>`
     );
   }
 
@@ -67,8 +66,6 @@ function build_navbar(navbar_id) {
   });
 }
 
-build_navbar("navbar__list");
-// Add class 'active' to section when near top of viewport
 /*
  *@description adds your-active-class to sections
  *@return undefiened
@@ -76,26 +73,35 @@ build_navbar("navbar__list");
 function activate_visibleSections() {
   document.querySelectorAll("section").forEach((elm) => {
     const theTop = elm.getBoundingClientRect().top;
-    if (theTop < 80 && theTop > -120) {
-      if (!elm.classList.contains("your-active-class"))
+    //changed for responsiveness
+    const height = Math.abs(theTop - elm.getBoundingClientRect().bottom);
+    if (theTop < 0.5 * height && theTop > -0.5 * height) {
+      if (!elm.classList.contains("your-active-class")) {
         elm.classList.add("your-active-class");
+        document
+          .querySelector(`a[data-id="${elm.id}"]`)
+          //added a css rule for anchor tags similar to hover effect
+          .classList.add("your-active-class");
+      }
     } else {
       elm.classList.remove("your-active-class");
+      document
+        .querySelector(`a[data-id="${elm.id}"]`)
+        .classList.remove("your-active-class");
     }
   });
 }
-activate_visibleSections();
-document.addEventListener("scroll", activate_visibleSections);
-// Scroll to anchor ID using scrollTO event
 
 /**
  * End Main Functions
  * Begin Events
  *
  */
+// build the nav
+build_navbar("navbar__list");
 
-// Build menu
+// Add class 'active' to section when near top of viewport
+activate_visibleSections();
 
-// Scroll to section on link click
-
-// Set sections as active
+//activate visible sections on scrolling
+document.addEventListener("scroll", activate_visibleSections);
