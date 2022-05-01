@@ -22,7 +22,7 @@ Ghada Yossry Ibrahim ELbohy
 
 ## Technology
 
-DOM elements manipulation
+DOM elements manipulation, event listener.
 
 ## Dependencies
 
